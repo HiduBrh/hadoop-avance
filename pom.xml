@@ -7,13 +7,12 @@
     <groupId>hadoop-avance</groupId>
     <artifactId>hadoop-avance-twitter</artifactId>
     <version>1.0</version>
-  <repositories>
-    <repository>
-      <id>repo-nexus</id>
-      <name>nexus third party</name>
-      <url>http://localhost:8081/nexus/content/repositories/thirdparty/</url>
-    </repository>
-  </repositories>
+    <distributionManagement>
+        <repository>
+            <id>thirdparty</id>
+            <url>http://localhost:8081/nexus/content/repositories/thirdparty</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
