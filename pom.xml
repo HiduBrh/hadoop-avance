@@ -32,7 +32,7 @@
             <configuration>
                 <archive>
                     <manifest>
-                        <mainClass>main.java.PrintSampleStream</mainClass>
+                        <mainClass>PrintSampleStream</mainClass>
                     </manifest>
                 </archive>
             </configuration>
