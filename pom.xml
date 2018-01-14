@@ -6,7 +6,12 @@
     <groupId>hadoop-avance</groupId>
     <artifactId>hadoop-avance-twitter</artifactId>
     <version>1.0</version>
-
+  <repositories>
+    <repository>
+      <id>public</id>
+      <url>http://localhost:8081/nexus/content/groups/public/</url>
+    </repository>
+  </repositories>
     <dependencies>
     <dependency>
             <groupId>org.twitter4j</groupId>
