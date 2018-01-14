@@ -11,7 +11,7 @@
     <repository>
       <id>repo-nexus</id>
       <name>nexus third party</name>
-      <url>http://http://localhost:8081/nexus/content/repositories/thirdparty/</url>
+      <url>http://localhost:8081/nexus/content/repositories/thirdparty/</url>
     </repository>
   </repositories>
 
