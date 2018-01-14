@@ -9,8 +9,8 @@
     <version>1.0</version>
       <repositories>
     <repository>
-      <id>thirdparty</id>
-      <url>http://localhost:8081/nexus/content/repositories/thirdparty</url>
+      <id>public</id>
+      <url>http://localhost:8081/nexus/content/groups/public/</url>
     </repository>
   </repositories>
 
