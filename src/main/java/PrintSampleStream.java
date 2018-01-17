@@ -1,19 +1,50 @@
 import twitter4j.*;
+import twitter4j.Twitter;
 import twitter4j.conf.ConfigurationBuilder;
+import org.json.simple.JSONObject;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.BufferedWriter;
 
 public final class PrintSampleStream {
 
     public static void main(String[] args) throws TwitterException, IOException {
         ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
-        configurationBuilder.setOAuthConsumerKey("")
-                .setOAuthConsumerSecret("")
-                .setOAuthAccessToken("")
-                .setOAuthAccessTokenSecret("");
+        configurationBuilder.setOAuthConsumerKey("Z6p84zp6sR5LENRzOIKaPC3iJ")
+                .setOAuthConsumerSecret("zfvGVIUaApZ08yFZVtKSrPIoCPgjn6TQvLFrYq9XtZzlPPW8d0")
+                .setOAuthAccessToken("793748592859156481-7peK28weU6C3dSkOtIXNLNoLYRZwWyt")
+                .setOAuthAccessTokenSecret("RW9sQOMfDl4V3bktMuGxaTQOadYe0kCUsVHq8T3eYDRjU");
 
         StatusListener listener = new StatusListener(){
             public void onStatus(Status status) {
-                System.out.println(status.getUser().getName() + " : " + status.getText());
+                //System.out.println(status.getUser().getName() + " : " + status.getText());
+
+
+                FileWriter fileWriter = null;
+                try {
+                    fileWriter = new FileWriter("tweets_app_newline.json",true);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                JSONObject obj = new JSONObject();
+                obj.put("user",status.getUser().getName());
+                obj.put("tweet",status.getText());
+
+
+
+                try {
+
+
+                    fileWriter.write(obj.toJSONString());
+                    fileWriter.write(System.getProperty( "line.separator" ));
+                    fileWriter.flush();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                System.out.println(obj);
+
+
             }
 
 
